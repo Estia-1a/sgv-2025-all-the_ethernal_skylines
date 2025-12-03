@@ -136,11 +136,40 @@ header {
     font-weight: bold;
     cursor: pointer;
     border: none;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.post-ad:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+}
+
+.post-ad:active {
+    transform: scale(0.95);
+}
+
 
 .post-ad:hover {
     background-color: #e6b800;
 }
+
+
+
+.controls button {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.controls button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.controls button:active {
+    transform: scale(0.95);
+}
+
 
 /* ===== ANNONCES ===== */
 .annonces {
