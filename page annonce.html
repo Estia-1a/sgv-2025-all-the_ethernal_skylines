@@ -31,5 +31,65 @@
             <p>Studio individuel</p>
         </ul>
     </section>
+
+    <section aria-labelledby="localisation">
+        <h2 id="localisation">Localisation</h2>
+        <p>Adresse du logement:</p>
+        <p> 1 rue Erretegia </p>
+
+            <div id="map">
+
+            <!-- Leaflet JavaScript -->
+            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+            
+            <script>
+                var map = L.map('map').setView([43.438756030637485, -1.5875441414954101], 8);
+
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors',
+                    maxZoom: 19,
+                }).addTo(map);
+
+                var marker = L.marker([43.438756030637485, -1.5875441414954101]).addTo(map);
+                marker.bindPopup('<b>Bidart, France</b><br>Residence CROUS ERLEAK').openPopup();
+
+                var marker2 = L.marker([43.445940644203354, -1.5514170170808224]).addTo(map);
+                marker2.bindPopup('<b>ESTIA, France</b>');
+            </script>
+        </div>
+    </section>
+
+
+    <section aria-labelledby="Contact">
+    <h3 id="Contact">Contact</h3>
+        <form>
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom">
+            </div>
+
+            <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Adresse e-mail</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="telephone">Numéro de téléphone</label>
+                <input type="tel" id="telephone" name="telephone">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" placeholder="Écrivez votre message ici..."></textarea>
+            </div>
+
+                <button type="submit">Envoyer</button>
+        </form>
+    </section>
 </body>
 </html>
