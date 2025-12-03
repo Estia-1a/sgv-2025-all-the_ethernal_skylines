@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page du logement</title>
+        <link rel="stylesheet" href="styles/desktop.css" media="screen and (min-width: 768px)"> 
+    <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 767px)"> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #map {
+            width: 40%;
+            height: 50vh;
+        }
+    </style>
+</head>
+<body>
+
+    
+<section aria-labelledby="Localisation">
+<h2 id="concept">Localisation</h2>
+<p>Adresse du logement:</p>
+<p> 1 rue Erretegia </p>
+
+    <div id="map"></div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        var map = L.map('map').setView([43.438756030637485, -1.5875441414954101], 8);
+
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 19,
+        }).addTo(map);
+
+        var marker = L.marker([43.438756030637485, -1.5875441414954101]).addTo(map);
+        marker.bindPopup('<b>Bidart, France</b><br>Residence CROUS ERLEAK').openPopup();
+
+        var marker2 = L.marker([43.445940644203354, -1.5514170170808224]).addTo(map);
+        marker2.bindPopup('<b>ESTIA, France</b>');
+    </script>
+
+
+
+    <section aria-labelledby="Contact">
+    <h3 id="concept">Contact</h3>
+
+
+</body>
+</html>
