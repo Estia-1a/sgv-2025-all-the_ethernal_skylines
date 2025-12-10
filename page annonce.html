@@ -23,13 +23,18 @@
         <section id="description">
         <h1>description</h1>
         <img>
-            
+            <div id="image">
+            <img src="media\pictures\logement_crous.jpeg" alt="image Crous" width="50%" height="300">
+            </div>
         </img>
+        <div id="principal">
         <ul>Adresse
                     <p>89 Rue Berrua, 64210 Bidart</p>
         </ul>
         <ul>Type de logement 
                     <p>Studio individuel</p>
+        </div>
+        <div id="descirption_p">
                 </li>
                 <li>
                     Superficie
@@ -69,32 +74,32 @@
                     <p>Étudiants internationaux en mobilité (Master, Doctorat)</p>
                     <p>Justificatifs à fournir : ressources, passeport, certificat de scolarité</p>
                 </li>
-            </ul>
-        </section>
-        <section id="localisation">
-            <h2>localisation</h2>
-            <div id="map">
-
-                <!-- Leaflet JavaScript -->
-                <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-                
-                <script>
-                    var map = L.map('map').setView([43.438756030637485, -1.5875441414954101], 8);
-
-
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        attribution: '© OpenStreetMap contributors',
-                        maxZoom: 19,
-                    }).addTo(map);
-
-                    var marker = L.marker([43.438756030637485, -1.5875441414954101]).addTo(map);
-                    marker.bindPopup('<b>Bidart, France</b><br>Residence CROUS ERLEAK').openPopup();
-
-                    var marker2 = L.marker([43.445940644203354, -1.5514170170808224]).addTo(map);
-                    marker2.bindPopup('<b>ESTIA, France</b>');
-                </script>
             </div>
-    </section>
+
+
+
+    <div id="map">
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        var map = L.map('map').setView([43.438756030637485, -1.5875441414954101], 8);
+
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 19,
+        }).addTo(map);
+
+        var marker = L.marker([43.438756030637485, -1.5875441414954101]).addTo(map);
+        marker.bindPopup('<b>Bidart, France</b><br>Residence CROUS ERLEAK').openPopup();
+
+        var marker2 = L.marker([43.445940644203354, -1.5514170170808224]).addTo(map);
+        marker2.bindPopup('<b>ESTIA, France</b>');
+    </script>
+</div>
+
+</section>
 
 
     <section aria-labelledby="Contact">
@@ -151,13 +156,12 @@
   </div>
 </form
 
-<!-- bloc désactivé étoiles -->
 <div class="five-rate-inactive"><p class="screen-readers">Noté 3.6 sur 5</p>
-    <span  class="rate-value-full"><span aria-hidden="true"><!-- --></span></span>
-    <span  class="rate-value-full"><span aria-hidden="true"><!-- --></span></span>
-    <span  class="rate-value-full"><span aria-hidden="true"><!-- --></span></span>
-    <span  class="rate-value-half"><span aria-hidden="true"><!-- --></span></span>
-    <span  class="rate-value-empty"><span aria-hidden="true"><!-- --></span></span>
+    <span  class="rate-value-full"><span aria-hidden="true"></span></span>
+    <span  class="rate-value-full"><span aria-hidden="true"></span></span>
+    <span  class="rate-value-full"><span aria-hidden="true"></span></span>
+    <span  class="rate-value-half"><span aria-hidden="true"></span></span>
+    <span  class="rate-value-empty"><span aria-hidden="true"></span></span>
 </div>
   <form action="/submit-comment" method="POST" class="comment-form">
     <div class="form-group">
