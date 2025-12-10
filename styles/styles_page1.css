@@ -286,12 +286,58 @@ footer {
     text-align: center;
 }
 
+.footer-links {
+    margin-bottom: 20px;
+}
+
 footer a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s;
 }
 
 footer a:hover {
     text-decoration: underline;
+    color: #3498db;
+}
+
+/* Sections dépliables */
+.expandable-section {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    background-color: #34495e;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.expandable-section.active {
+    max-height: 500px;
+    padding: 20px;
+}
+
+.expandable-section h3 {
+    color: #3498db;
+    margin-bottom: 15px;
+}
+
+.expandable-section p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #3498db;
 }
