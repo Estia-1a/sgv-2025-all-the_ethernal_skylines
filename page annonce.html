@@ -6,137 +6,30 @@
     
     <link rel="stylesheet" href="styles/desktop.css" media="screen and (min-width: 768px)"> 
     <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 767px)"> 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <title>Annonce de logement</title>
+    <title>Document</title>
 </head>
 <body>
     <header>
-        <nav class="main-nav">
-            <a href="index.html">Accueil</a>
-            <a href="annonce.html" class="active">Annonces</a>
-            <a href="index.html#contact">Contact</a>
-        </nav>
-        <nav>
-            <a href="#description">description</a>
-            <a href="#localisation">localisation</a>
-            <a href="#contacter">contacter</a>
-            <a href="#postuler">postuler</a>
-            <a href="#commentaire">commentaire</a>
-        </nav>  
+      <ul>
+        <li><a href="#description">déscription</a></li>
+        <li><a href="#localisation">localisation</a></li>
+        <li><a href="#contacter">contacter</a></li>
+        <li><a href="#postuler">postuler</a></li>
+        <li><a href="#comentaire">comentaire</a></li>
+      </ul>  
     </header>
 
-    <main>
-        <section id="description">
-            <h1>Description</h1>
-            <img src="placeholder.jpg" alt="Photo du logement">
+    <section id="description">
+        <h1>déscription</h1>
+        <img>
             
-            <ul>
-                <li>
-                    Adresse
-                    <p>89 Rue Berrua, 64210 Bidart</p>
-                </li>
-                <li>
-                    Type de logement
-                    <p>Studio individuel</p>
-                </li>
-                <li>
-                    Superficie
-                    <p>entre 18,85 m² et 22,09 m²</p>
-                </li>
-                <li>
-                    Loyer
-                    <p>environ 411,04 € par mois, charges comprises (eau, électricité, chauffage, internet)</p>
-                </li>
-                <li>
-                    Avance
-                    <p>100 € déductible du premier mois</p>
-                </li>
-                <li>
-                    Équipements inclus
-                    <p>Pièce principale : lit simple, bureau, étagères, placards, chaise, tabouret</p>
-                    <p>Kitchenette : frigo, plaques vitrocéramiques, évier, table</p>
-                    <p>Salle d’eau : douche, WC, lavabo, miroir</p>
-                </li>
-                <li>
-                    Services
-                    <p>Internet inclus</p>
-                    <p>Résidence calme et récente (ouverte en 2017)</p>
-                    <p>À proximité de l’ESTIA et du Crous Market’</p>
-                    <p>Personnel Crous disponible (accueil, astreinte, veille)</p>
-                </li>
-                <li>
-                    Transports
-                    <p>Bus à 200 m (Ligne 3 – arrêt Église)</p>
-                </li>
-                <li>
-                    APL possible
-                </li>
-                <li>
-                    Conditions d’accès
-                    <p>Étudiants avec Dossier Social Étudiant (DSE) valide</p>
-                    <p>Étudiants internationaux en mobilité (Master, Doctorat)</p>
-                    <p>Justificatifs à fournir : ressources, passeport, certificat de scolarité</p>
-                </li>
-            </ul>
-        </section>
-
-        <section id="localisation">
-            <h2>Localisation</h2>
-            <p>Adresse du logement:</p>
-            <p>1 rue Erretegia</p>
-
-            <div id="map"></div>
-        </section>
-
-        <section id="contacter">
-            <h3>Contacter</h3>
-            <form action="#" method="post">
-                <div class="form-group">
-                    <label for="nom">Nom</label>
-                    <input type="text" id="nom" name="nom" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="prenom">Prénom</label>
-                    <input type="text" id="prenom" name="prenom" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Adresse e-mail</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="telephone">Numéro de téléphone</label>
-                    <input type="tel" id="telephone" name="telephone">
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="6" placeholder="Écrivez votre message ici..." required></textarea>
-                </div>
-
-                <button type="submit">Envoyer</button>
-            </form>
-        </section>
-    </main>
-
-    <!-- Scripts Leaflet en fin de body -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-    <script>
-        var map = L.map('map').setView([43.438756030637485, -1.5875441414954101], 13);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors',
-            maxZoom: 19,
-        }).addTo(map);
-
-        var marker = L.marker([43.438756030637485, -1.5875441414954101]).addTo(map);
-        marker.bindPopup('<b>Bidart, France</b><br>Residence CROUS ERLEAK').openPopup();
-
-        var marker2 = L.marker([43.445940644203354, -1.5514170170808224]).addTo(map);
-        marker2.bindPopup('<b>ESTIA, France</b>');
-    </script>
+        </img>
+        <ul>Adresse
+            <p>89 Rue Berrua, 64210 Bidart</p>
+        </ul>
+        <ul>Type de logement 
+            <p>Studio individuel</p>
+        </ul>
+    </section>
 </body>
 </html>
