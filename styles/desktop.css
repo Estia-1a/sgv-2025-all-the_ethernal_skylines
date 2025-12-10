@@ -57,7 +57,7 @@ h2, h3 {
 
 #description {
     display: flex;
-    justify-content: flex-start;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
@@ -90,16 +90,20 @@ li p {
 }
 #image {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start, right;
+}
+#principal{
+    display: flex;
+    justify-content: flex-start, left;
 }
 #description_p{
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end, left;
 }
 /* Carte */
 #map {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end, right;
     height: 400px;
     width: 50%;
     border-radius: 10px;
