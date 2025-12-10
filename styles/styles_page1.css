@@ -69,9 +69,9 @@ header {
     font-size: 42px;
     margin-bottom: 30px;
     color: #2c3e50;
-    background-color: rgba(255, 255, 255, 0.792);
+    background-color: rgba(255, 255, 255, 0.914);
     padding: 12px 18px;
-    border: none;
+    border-radius: 18px;
     border-radius: 6px;
 }
 
@@ -98,7 +98,9 @@ header {
 }
 
 .btn-light:hover {
-    background-color: rgba(255, 255, 255, 0.792);
+    background-color: #2c3e502f;
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
 }
 
 .search-bar {
@@ -110,7 +112,7 @@ header {
     width: 100%;
     padding: 15px;
     font-size: 16px;
-    background-color: rgba(255, 255, 255, 0.792);
+    background-color: rgb(255, 255, 255);
     border-radius: 6px 0 0 6px;
     border: none;
     outline: none;
@@ -146,7 +148,7 @@ header {
     border-radius: 60px;
     font-weight: bold;
     cursor: pointer;
-    border-width: 5px;
+    border-width: 3px;
     border-color: #2c3e50;
     box-shadow: 0 10px 25px rgba(0,0,0,0.35);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -165,6 +167,7 @@ header {
 .post-ad:hover {
     background-color: #2c3e502f;
     color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
 }
 
 
