@@ -91,13 +91,24 @@
     <section class="comment-section">
   <h5>Laissez une note et un commentaire</h5>
   <!-- bloc cliquable étoiles -->
-<div class="five-rate-active">
-    <button type="button" data-popover class="rate-value-empty" aria-label="Noter 1 sur 5"><span aria-hidden="true">1</span></button>
-    <button type="button" data-popover class="rate-value-empty" aria-label="Noter 2 sur 5"><span aria-hidden="true">2</span></button>
-    <button type="button" data-popover class="rate-value-empty" aria-label="Noter 3 sur 5"><span aria-hidden="true">3</span></button>
-    <button type="button" data-popover class="rate-value-empty" aria-label="Noter 4 sur 5"><span aria-hidden="true">4</span></button>
-    <button type="button" data-popover class="rate-value-empty" aria-label="Noter 5 sur 5"><span aria-hidden="true">5</span></button>
-</div>
+<form>
+  <div class="rating">
+    <input type="radio" id="star5" name="rating" value="5">
+    <label for="star5" title="5 étoiles">★</label>
+
+    <input type="radio" id="star4" name="rating" value="4">
+    <label for="star4" title="4 étoiles">★</label>
+
+    <input type="radio" id="star3" name="rating" value="3">
+    <label for="star3" title="3 étoiles">★</label>
+
+    <input type="radio" id="star2" name="rating" value="2">
+    <label for="star2" title="2 étoiles">★</label>
+
+    <input type="radio" id="star1" name="rating" value="1">
+    <label for="star1" title="1 étoile">★</label>
+  </div>
+</form
 
 <!-- bloc désactivé étoiles -->
 <div class="five-rate-inactive"><p class="screen-readers">Noté 3.6 sur 5</p>
