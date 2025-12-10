@@ -49,8 +49,16 @@ header {
     color: #2c3e50;
 }
 
-.header-icons i:hover {
-    color: #007bff;
+.header-icons i:nth-child(1):hover {
+    color: #fe4e2f; /* Rouge pour le cœur */
+}
+
+.header-icons i:nth-child(2):hover {
+    color: #ffc800; /* Orange pour la cloche */
+}
+
+.header-icons i:nth-child(3):hover {
+    color: #007bff; /* Bleu pour l'utilisateur */
 }
 
 /* ===== HERO SECTION ===== */
@@ -71,8 +79,8 @@ header {
     color: #2c3e50;
     background-color: rgba(255, 255, 255, 0.914);
     padding: 12px 18px;
-    border-radius: 18px;
-    border-radius: 6px;
+    border: none;
+    border-radius: 32px;
 }
 
 .controls {
