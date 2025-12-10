@@ -7,7 +7,6 @@
 }
 
 body {
-<<<<<<< HEAD
     background-image: url('https://cdn.generationvoyage.fr/2020/06/Villages-Pays-Basque-Mise-en-avant.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -61,13 +60,9 @@ h2, h3 {
 #description {
     display: flex;
     justify-content: flex-start;
-    width : 50%;
     gap: 30px;
 }
 
-.description-content {
-    flex: 1;
-}
 
 .description-image {
     flex: 1;
@@ -170,13 +165,3 @@ button:hover {
         gap: 15px;
     }
 }
-=======
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        #map {
-            width: 40%;
-            height: 50vh;
-        }
->>>>>>> origin/main
