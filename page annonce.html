@@ -81,23 +81,25 @@
 
     <div id="localisation">
 
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-        
-        <script>
-            var map = L.map('map').setView([43.438756030637485, -1.5875441414954101], 8);
+        <ul id="map">
+            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+            
+            <script>
+                var map = L.map('map').setView([43.438756030637485, -1.5875441414954101], 8);
 
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors',
-                maxZoom: 19,
-            }).addTo(map);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors',
+                    maxZoom: 19,
+                }).addTo(map);
 
-            var marker = L.marker([43.438756030637485, -1.5875441414954101]).addTo(map);
-            marker.bindPopup('<b>Bidart, France</b><br>Residence CROUS ERLEAK').openPopup();
+                var marker = L.marker([43.438756030637485, -1.5875441414954101]).addTo(map);
+                marker.bindPopup('<b>Bidart, France</b><br>Residence CROUS ERLEAK').openPopup();
 
-            var marker2 = L.marker([43.445940644203354, -1.5514170170808224]).addTo(map);
-            marker2.bindPopup('<b>ESTIA, France</b>');
-        </script>
+                var marker2 = L.marker([43.445940644203354, -1.5514170170808224]).addTo(map);
+                marker2.bindPopup('<b>ESTIA, France</b>');
+            </script>
+        </ul>
     </div>
 
     <section id="Contact">
