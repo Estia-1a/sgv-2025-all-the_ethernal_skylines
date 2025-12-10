@@ -254,6 +254,26 @@ header {
     font-size: 18px;
 }
 
+.annonce-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Tablettes : 2 colonnes */
+@media (max-width: 992px) {
+    .annonce-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile : 1 colonne */
+@media (max-width: 768px) {
+    .annonce-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 
 
