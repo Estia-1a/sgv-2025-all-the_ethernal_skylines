@@ -107,7 +107,9 @@ li p {
 }
 /* Carte */
 #map {
-
+    display: flex;
+    z-index: 0;
+    justify-content: flex-start, left;
     height: 400px;
     width: 50%;
     border-radius: 10px;
