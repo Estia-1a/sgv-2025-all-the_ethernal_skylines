@@ -42,7 +42,6 @@ header a:hover {
 /* Sections */
 section {
     background-color: white;
-    max-width: 1000px;
     margin: 30px auto;
     padding: 30px;
     border-radius: 10px;
@@ -89,9 +88,18 @@ li p {
     color: #666;
     margin-top: 5px;
 }
-
+#image {
+    display: flex;
+    justify-content: flex-end;
+}
+#description_p{
+    display: flex;
+    justify-content: flex-start;
+}
 /* Carte */
 #map {
+    display: flex;
+    justify-content: center;
     height: 400px;
     width: 50%;
     border-radius: 10px;
