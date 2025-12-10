@@ -1,113 +1,331 @@
+/* RESET DE BASE */
 
-@media (max-width: 768px) {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
 
-    body {
-        /* Pour éviter les bugs de scroll avec les grands fonds sur mobile */
-        background-attachment: scroll;
-    }
+body {
+    background: #f5f5f5;
+    color: #222;
+}
 
-    /* HEADER */
-    header {
-        padding: 10px 15px;
-    }
+/* HEADER DU SITE (LOGO + NAV PRINCIPALE) */
 
-    .logo h1 {
-        font-size: 18px;
-    }
+.site-header {
+    display: flex;
+    flex-direction: column;           /* logo au-dessus du menu */
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
 
-    .logo img {
-        width: 32px;
-        height: 32px;
-    }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+}
 
-    .header-icons i {
-        font-size: 18px;
-        margin-left: 12px;
-    }
+.logo img {
+    height: 32px;
+}
 
-    /* HERO */
-    .hero {
-        padding: 40px 15px 20px;
-        flex-direction: column;       /* Passe en colonne */
-        align-items: flex-start;
-    }
+.main-nav {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;                /* si trop de liens, défilement horizontal */
+}
 
-    .hero-left {
-        max-width: 100%;
-    }
+.main-nav a {
+    flex-shrink: 0;
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    background: #f3f4f6;
+}
 
-    .hero-left h2 {
-        font-size: 26px;
-        margin-bottom: 20px;
-    }
+.main-nav a:hover,
+.main-nav a.active {
+    color: #ffffff;
+    background: #0b7ad1;
+}
 
-    .controls {
-        flex-direction: column;
-        gap: 10px;
-    }
+/* BOUTONS GÉNÉRIQUES */
 
-    .controls button {
-        width: 100%;
-        font-size: 18px;
-        text-align: left;
-    }
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.95rem;
+}
 
-    .search-bar {
-        flex-direction: column;
-        margin-top: 15px;
-    }
+.btn-primary {
+    background: #0b7ad1;
+    color: #fff;
+}
 
-    .search-bar input {
-        border-radius: 6px;
-        margin-bottom: 10px;
-    }
+.btn-primary:hover {
+    background: #095e9e;
+}
 
-    .search-bar button {
-        border-radius: 6px;
-        width: 100%;
-    }
+.btn-secondary {
+    background: #ffffff;
+    color: #0b7ad1;
+    border: 1px solid #0b7ad1;
+}
 
-    .hero-right {
-        margin-top: 20px;
-        width: 100%;
-        justify-content: center;
-    }
+.btn-secondary:hover {
+    background: #e6f2fb;
+}
 
-    .post-ad {
-        width: 100%;
-        font-size: 18px;
-        padding: 15px 20px;
-        border-radius: 40px;
-        text-align: center;
-    }
+/* HERO */
 
-    /* ANNONCES */
-    .annonces {
-        padding: 30px 15px 50px;
-    }
+.hero {
+    padding: 2.5rem 1.2rem;
+    background: linear-gradient(120deg, #0b7ad1 0%, #4fb2ff 60%, #ffffff 100%);
+    color: #fff;
+}
 
-    .annonces h3 {
-        font-size: 22px;
-        margin-bottom: 20px;
-    }
+.hero-text {
+    max-width: 100%;
+}
 
-    .annonce-grid {
-        grid-template-columns: 1fr;   /* 1 seule carte par ligne */
-        gap: 20px;
-    }
+.hero h1 {
+    font-size: 1.7rem;
+    margin-bottom: 0.8rem;
+}
 
-    .annonce-card {
-        height: 200px;
-    }
+.hero p {
+    margin-bottom: 1.2rem;
+    font-size: 0.98rem;
+}
 
-    /* FOOTER */
-    footer {
-        padding: 20px 10px;
-        font-size: 14px;
-    }
+/* SECTIONS GÉNÉRALES */
 
-    footer a {
-        display: inline-block;
-        margin: 5px 8px;
-    }
+main > section {
+    padding: 1.8rem 1.2rem;
+    background: #f5f5f5;
+}
+
+main > section:nth-of-type(even) {
+    background: #ffffff;
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+
+/* FORMULAIRES */
+
+.search-form,
+.annonce-form {
+    display: flex;
+    flex-direction: column;   /* tout en colonne sur mobile */
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.field label {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.field input,
+.field select,
+.field textarea {
+    padding: 0.55rem 0.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+}
+
+/* ÉTAPES */
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;   /* 1 colonne sur téléphone */
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.step {
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* BLOC PROPRIÉTAIRES */
+
+.owners {
+    text-align: left;
+}
+
+.owners p {
+    margin: 0.8rem 0 1.2rem;
+}
+
+/* ANNONCES LISTE */
+
+.annonces-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1.3rem;
+}
+
+.annonce-card {
+    display: flex;
+    flex-direction: column;    /* image / texte / boutons en colonne */
+    align-items: flex-start;
+    padding: 1rem 1rem;
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    gap: 0.8rem;
+}
+
+.annonce-main h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.annonce-location {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.2rem;
+}
+
+.annonce-price {
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.annonce-details {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+/* Les boutons passent en ligne sur mobile pour ne pas trop étirer en hauteur */
+.annonce-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+/* DÉPOSER ANNONCE */
+
+.deposer-annonce {
+    background: #f5fbff;
+    border-top: 1px solid #d3e6f7;
+}
+
+/* FOOTER */
+
+.site-footer {
+    text-align: center;
+    padding: 1.2rem 1rem;
+    background: #111827;
+    color: #e5e7eb;
+    font-size: 0.85rem;
+}
+
+/* NOTATION PAR ÉTOILES */
+
+.rating {
+    display: inline-flex;
+    direction: rtl;
+    gap: 0.15rem;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 1.4rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+    color: gold;
+}
+
+.rating input:checked ~ label {
+    color: gold;
+}
+
+/* NAVIGATION INTERNE DESCRIPTION / LOCALISATION / ... */
+
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+    padding: 0.6rem 0.4rem;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+/* ul en ligne avec défilement horizontal si besoin */
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.4rem;
+    overflow-x: auto;
+    padding: 0 0.6rem;
+}
+
+header li {
+    margin: 0;
+    padding: 0;
+}
+
+header a {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: #f3f4f6;
+    color: #444;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border: 1px solid transparent;
+    white-space: nowrap;  /* évite que le texte casse sur plusieurs lignes */
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+header a:hover {
+    background: #0b7ad1;
+    color: #ffffff;
+    border-color: #0b7ad1;
 }
