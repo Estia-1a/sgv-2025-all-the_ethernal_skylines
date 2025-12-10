@@ -149,32 +149,48 @@ button:hover {
     background-color: #1a2a3a;
 }
 
-/* Notes étoiles */
-.five-rate-active,
-.five-rate-inactive {
-    display: flex;
-    gap: 5px;
-    margin: 15px 0;
+.rating-container {
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
 }
 
-.five-rate-active button {
-    background: none;
-    font-size: 30px;
+.stars {
+  --s: 50px; /* taille des étoiles */
+  position: relative;
+  display: inline-flex;
 }
 
-.rate-value-empty::before {
-    content: "☆";
+.stars input {
+  width: var(--s);
+  height: var(--s);
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
 }
 
-.rate-value-full::before {
-    content: "★";
-    color: gold;
+.stars label {
+  position: absolute;
+  font-size: 40px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s;
 }
-#etoiles{
-    display: flex;
-    flex-direction: row
 
+/* Positionne chaque étoile */
+.stars label:nth-of-type(1) { left: 0; }
+.stars label:nth-of-type(2) { left: 50px; }
+.stars label:nth-of-type(3) { left: 100px; }
+.stars label:nth-of-type(4) { left: 150px; }
+.stars label:nth-of-type(5) { left: 200px; }
+
+/* Colore l'étoile au survol et toutes celles avant */
+.stars input:hover ~ label,
+.stars input:checked ~ label {
+  color: gold;
 }
+
+
 /* Responsive */
 @media (max-width: 768px) {
     #description {
