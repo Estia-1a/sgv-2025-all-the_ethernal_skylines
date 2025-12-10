@@ -111,10 +111,78 @@
 
     <!-- FOOTER -->
     <footer>
-        <a href="#">Retour en haut</a>
-        <a href="#">Politique de confidentialité</a>
-        <a href="#">Contact</a>
+        <div class="footer-links">
+            <a href="#top" id="backToTop">Retour à l'accueil</a>
+            <a href="#" id="privacyToggle">Politique de confidentialité</a>
+            <a href="#" id="contactToggle">Contact</a>
+        </div>
+
+        <!-- Section Politique de confidentialité -->
+        <div id="privacySection" class="expandable-section">
+            <h3>Politique de confidentialité</h3>
+            <p><strong>1. Collecte des données</strong><br>
+            Nous collectons les informations que vous nous fournissez directement lors de votre inscription sur ESTIA'Loc, notamment votre nom, adresse e-mail, numéro de téléphone et informations de localisation.</p>
+            
+            <p><strong>2. Utilisation des données</strong><br>
+            Vos données personnelles sont utilisées pour faciliter la mise en relation entre propriétaires et locataires, améliorer nos services et vous envoyer des notifications pertinentes concernant les annonces.</p>
+            
+            <p><strong>3. Protection des données</strong><br>
+            Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles appropriées pour protéger vos informations contre tout accès non autorisé, modification ou divulgation.</p>
+            
+            <p><strong>4. Vos droits</strong><br>
+            Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles.</p>
+        </div>
+
+        <!-- Section Contact -->
+        <div id="contactSection" class="expandable-section">
+            <h3>Contactez-nous</h3>
+            <div class="contact-info">
+                <p><strong>📧 E-mail :</strong> contacteznous@estialoc.fr</p>
+                <p><strong>📧 Support :</strong> supportinfo@estialoc.fr</p>
+                <p><strong>📞 Téléphone :</strong> +33 5 59 43 84 00</p>
+                <p><strong>📞 Service client :</strong> +33 5 59 43 84 01</p>
+                <p><strong>📍 Adresse :</strong> Technopole Izarbel, 64210 Bidart, France</p>
+                <p><strong>🕐 Horaires :</strong> Lundi - Vendredi : 9h00 - 18h00</p>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Gestion du défilement fluide vers le haut
+        document.getElementById('backToTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Toggle Politique de confidentialité
+        document.getElementById('privacyToggle').addEventListener('click', function(e) {
+            e.preventDefault();
+            const privacySection = document.getElementById('privacySection');
+            const contactSection = document.getElementById('contactSection');
+            
+            // Ferme la section contact si ouverte
+            contactSection.classList.remove('active');
+            
+            // Toggle la section politique
+            privacySection.classList.toggle('active');
+        });
+
+        // Toggle Contact
+        document.getElementById('contactToggle').addEventListener('click', function(e) {
+            e.preventDefault();
+            const contactSection = document.getElementById('contactSection');
+            const privacySection = document.getElementById('privacySection');
+            
+            // Ferme la section politique si ouverte
+            privacySection.classList.remove('active');
+            
+            // Toggle la section contact
+            contactSection.classList.toggle('active');
+        });
+    </script>
 
 </body>
 </html>
