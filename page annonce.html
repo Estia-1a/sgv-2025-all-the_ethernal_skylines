@@ -77,6 +77,10 @@
                     <p>Justificatifs à fournir : ressources, passeport, certificat de scolarité</p>
                 </li>
             </ul>
+        <div id="image2">
+            <img src="media\pictures\img2.jpeg" alt="image Crous2" height="384">
+        </div>
+       
     </section>
 
     <div id="localisation">
@@ -138,30 +142,13 @@
         <h5>Laissez une note et un commentaire</h5>
         <!-- bloc cliquable étoiles -->
         <form>
-        <div class="rating">
-            <input type="radio" id="star5" name="rating" value="5">
-            <label for="star5" title="5 étoiles">★</label>
-
-            <input type="radio" id="star4" name="rating" value="4">
-            <label for="star4" title="4 étoiles">★</label>
-
-            <input type="radio" id="star3" name="rating" value="3">
-            <label for="star3" title="3 étoiles">★</label>
-
-            <input type="radio" id="star2" name="rating" value="2">
-            <label for="star2" title="2 étoiles">★</label>
-
-            <input type="radio" id="star1" name="rating" value="1">
-            <label for="star1" title="1 étoile">★</label>
+        <div class="rating" id="etoiles">
+            <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 étoiles">★</label><input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 étoiles">★</label><input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 étoiles">★</label><input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 étoiles">★</label><input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 étoile">★</label>
         </div>
         </form>
 
         <div class="five-rate-inactive"><p class="screen-readers">Noté 3.6 sur 5</p>
-            <span  class="rate-value-full"><span aria-hidden="true"></span></span>
-            <span  class="rate-value-full"><span aria-hidden="true"></span></span>
-            <span  class="rate-value-full"><span aria-hidden="true"></span></span>
-            <span  class="rate-value-half"><span aria-hidden="true"></span></span>
-            <span  class="rate-value-empty"><span aria-hidden="true"></span></span>
+            <span  class="rate-value-full"><span aria-hidden="true"></span></span><span  class="rate-value-full"><span aria-hidden="true"></span></span><span  class="rate-value-full"><span aria-hidden="true"></span></span><span  class="rate-value-half"><span aria-hidden="true"></span></span><span  class="rate-value-empty"><span aria-hidden="true"></span></span>
         </div>
         <form action="/submit-comment" method="POST" class="comment-form">
             <div class="form-group">

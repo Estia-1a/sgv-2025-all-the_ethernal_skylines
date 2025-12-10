@@ -164,7 +164,11 @@ button:hover {
     content: "★";
     color: gold;
 }
+#etoiles{
+    display: flex;
+    flex-direction: row
 
+}
 /* Responsive */
 @media (max-width: 768px) {
     #description {
