@@ -1,156 +1,113 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
 
-body {
-    background: #f5f5f5;
-    color: #222;
-}
+@media (max-width: 768px) {
 
+    body {
+        /* Pour éviter les bugs de scroll avec les grands fonds sur mobile */
+        background-attachment: scroll;
+    }
 
-header {
-    background: #ffffff;
-    border-bottom: 1px solid #ddd;
-    padding: 0.75rem 1rem;
-}
-.main-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 0.6rem;
-}
+    /* HEADER */
+    header {
+        padding: 10px 15px;
+    }
 
-.main-nav a {
-    text-decoration: none;
-    padding: 0.3rem 0.7rem;
-    border-radius: 999px;
-    font-size: 0.9rem;
-    color: #444;
-    background: #f3f4f6;
-}
+    .logo h1 {
+        font-size: 18px;
+    }
 
-.main-nav a.active {
-    background: #0b7ad1;
-    color: #ffffff;
-    font-weight: 600;
-}
+    .logo img {
+        width: 32px;
+        height: 32px;
+    }
 
-header nav:nth-of-type(2) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.4rem;
-}
+    .header-icons i {
+        font-size: 18px;
+        margin-left: 12px;
+    }
 
-header nav:nth-of-type(2) a {
-    text-decoration: none;
-    font-size: 0.85rem;
-    padding: 0.25rem 0.6rem;
-    border-radius: 999px;
-    background: #e5e7eb;
-    color: #111827;
-}
+    /* HERO */
+    .hero {
+        padding: 40px 15px 20px;
+        flex-direction: column;       /* Passe en colonne */
+        align-items: flex-start;
+    }
 
+    .hero-left {
+        max-width: 100%;
+    }
 
-main {
-    padding: 1rem;
-}
+    .hero-left h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
 
-section {
-    background: #ffffff;
-    border-radius: 0.9rem;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-}
+    .controls {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-h1, h2, h3 {
-    margin-bottom: 0.8rem;
-}
+    .controls button {
+        width: 100%;
+        font-size: 18px;
+        text-align: left;
+    }
 
+    .search-bar {
+        flex-direction: column;
+        margin-top: 15px;
+    }
 
-#description img {
-    width: 100%;
-    border-radius: 0.8rem;
-    margin-bottom: 0.8rem;
-    object-fit: cover;
-}
+    .search-bar input {
+        border-radius: 6px;
+        margin-bottom: 10px;
+    }
 
-#description ul {
-    list-style: none;
-}
+    .search-bar button {
+        border-radius: 6px;
+        width: 100%;
+    }
 
-#description li {
-    margin-bottom: 0.6rem;
-    font-weight: 600;
-}
+    .hero-right {
+        margin-top: 20px;
+        width: 100%;
+        justify-content: center;
+    }
 
-#description li p {
-    font-weight: 400;
-    font-size: 0.95rem;
-}
+    .post-ad {
+        width: 100%;
+        font-size: 18px;
+        padding: 15px 20px;
+        border-radius: 40px;
+        text-align: center;
+    }
 
+    /* ANNONCES */
+    .annonces {
+        padding: 30px 15px 50px;
+    }
 
-#localisation p {
-    margin-bottom: 0.4rem;
-    font-size: 0.95rem;
-}
+    .annonces h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
 
-#map {
-    width: 100% !important;
-    height: 40vh;
-    margin-top: 0.8rem;
-    border-radius: 0.8rem;
-    overflow: hidden;
-}
+    .annonce-grid {
+        grid-template-columns: 1fr;   /* 1 seule carte par ligne */
+        gap: 20px;
+    }
 
+    .annonce-card {
+        height: 200px;
+    }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
+    /* FOOTER */
+    footer {
+        padding: 20px 10px;
+        font-size: 14px;
+    }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    margin-bottom: 0.35rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 0.55rem 0.7rem;
-    border-radius: 0.6rem;
-    border: 1px solid #d1d5db;
-    font-size: 0.95rem;
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-button[type="submit"] {
-    margin-top: 0.4rem;
-    padding: 0.7rem 1rem;
-    border-radius: 999px;
-    border: none;
-    background: #0b7ad1;
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 0.95rem;
-    cursor: pointer;
-}
-
-button[type="submit"]:active {
-    transform: scale(0.98);
+    footer a {
+        display: inline-block;
+        margin: 5px 8px;
+    }
 }
