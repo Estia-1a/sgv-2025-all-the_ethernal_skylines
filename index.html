@@ -147,5 +147,42 @@
         </div>
     </footer>
 
+    <script>
+        // Gestion du défilement fluide vers le haut
+        document.getElementById('backToTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Toggle Politique de confidentialité
+        document.getElementById('privacyToggle').addEventListener('click', function(e) {
+            e.preventDefault();
+            const privacySection = document.getElementById('privacySection');
+            const contactSection = document.getElementById('contactSection');
+            
+            // Ferme la section contact si ouverte
+            contactSection.classList.remove('active');
+            
+            // Toggle la section politique
+            privacySection.classList.toggle('active');
+        });
+
+        // Toggle Contact
+        document.getElementById('contactToggle').addEventListener('click', function(e) {
+            e.preventDefault();
+            const contactSection = document.getElementById('contactSection');
+            const privacySection = document.getElementById('privacySection');
+            
+            // Ferme la section politique si ouverte
+            privacySection.classList.remove('active');
+            
+            // Toggle la section contact
+            contactSection.classList.toggle('active');
+        });
+    </script>
+
 </body>
 </html>
