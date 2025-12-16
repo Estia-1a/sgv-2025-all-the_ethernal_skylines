@@ -90,26 +90,26 @@ li p {
 }
 #image {
     display: flex;
-    justify-content: flex-start, right;
+    justify-content: flex-start;
 }
 #principal{
     display: flex;
-    justify-content: flex-start, left;
+    justify-content: flex-start;
 }
 #description_p{
     display: flex;
-    justify-content: flex-end, left;
+    justify-content: flex-end;
 }
 #localisation { 
     background-color: #f5f5f5;
     display: flex;
-    justify-content: flex-start, left;
+    justify-content: flex-start;
 }
 /* Carte */
 #map {
     display: flex;
     z-index: 0;
-    justify-content: flex-start, left;
+    justify-content: flex-start;
     height: 400px;
     width: 50%;
     border-radius: 10px;
