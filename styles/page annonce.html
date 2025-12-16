@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="styles/desktop.css" media="screen and (min-width: 768px)"> 
+    <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 767px)"> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <title>Document</title>
+</head>
+<body>
+    <header>
+      <ul>
+        <li><a href="#description">déscription</a></li>
+        <li><a href="#localisation">localisation</a></li>
+        <li><a href="#contacter">contacter</a></li>
+        <li><a href="#comentaire">comentaire</a></li>
+      </ul>  
+    </header>
+
+    <section id="description">
+        <h1>description</h1>
+
+        <ul id="principal">
+            <li>
+                Adresse
+                <p>89 Rue Berrua, 64210 Bidart</p>
+            </li>
+            <li>Type de logement 
+                <p>Studio individuel</p>
+            </li>
+            
+        </ul>
+        <div id="image">
+            <img src="media/pictures/logement_crous.jpeg" alt="image Crous" height="384">
+        </div>
+       
+        <ul id="descirption_p">
+                <li>
+                    Superficie
+                    <p>entre 18,85 m² et 22,09 m²</p>
+                </li>
+                <li>
+                    Loyer
+                    <p>environ 411,04 € par mois, charges comprises (eau, électricité, chauffage, internet)</p>
+                </li>
+                <li>
+                    Avance
+                    <p>100 € déductible du premier mois</p>
+                </li>
+                <li>
+                    Équipements inclus
+                    <p>Pièce principale : lit simple, bureau, étagères, placards, chaise, tabouret</p>
+                    <p>Kitchenette : frigo, plaques vitrocéramiques, évier, table</p>
+                    <p>Salle d’eau : douche, WC, lavabo, miroir</p>
+                </li>
+                <li>
+                    Services
+                    <p>Internet inclus</p>
+                    <p>Résidence calme et récente (ouverte en 2017)</p>
+                    <p>À proximité de l’ESTIA et du Crous Market’</p>
+                    <p>Personnel Crous disponible (accueil, astreinte, veille)</p>
+                </li>
+                <li>
+                    Transports
+                    <p>Bus à 200 m (Ligne 3 – arrêt Église)</p>
+                </li>
+                <li>
+                    APL possible
+                </li>
+                <li>
+                    Conditions d’accès
+                    <p>Étudiants avec Dossier Social Étudiant (DSE) valide</p>
+                    <p>Étudiants internationaux en mobilité (Master, Doctorat)</p>
+                    <p>Justificatifs à fournir : ressources, passeport, certificat de scolarité</p>
+                </li>
+            </ul>
+        <div id="image2">
+            <img src="media/pictures/img2.jpeg" alt="image Crous2" height="384">
+        </div>
+       
+    </section>
+
+    <div id="localisation">
+        <h2>localisation</h2>
+        <ul id="map">
+            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+            
+            <script>
+                var map = L.map('map').setView([43.438756030637485, -1.5875441414954101], 8);
+
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors',
+                    maxZoom: 19,
+                }).addTo(map);
+
+                var marker = L.marker([43.438756030637485, -1.5875441414954101]).addTo(map);
+                marker.bindPopup('<b>Bidart, France</b><br>Residence CROUS ERLEAK').openPopup();
+
+                var marker2 = L.marker([43.445940644203354, -1.5514170170808224]).addTo(map);
+                marker2.bindPopup('<b>ESTIA, France</b>');
+            </script>
+        </ul>
+    </div>
+
+    <section id="Contact">
+        <h3 id="contacter">Contact</h3>
+        <form>
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom">
+            </div>
+
+            <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Adresse e-mail</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="telephone">Numéro de téléphone</label>
+                <input type="tel" id="telephone" name="telephone">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" placeholder="Écrivez votre message ici..."></textarea>
+            </div>
+
+                <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    
+    <section id="comentaire">
+        <h5>Laissez une note et un commentaire</h5>
+            <form action="/soumettre-note" method="post">
+            <div class="stars">
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1">★</label>
+    
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2">★</label>
+    
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3">★</label>
+    
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4">★</label>
+    
+                <input type="radio" id="star5" name="rating" value="5" />
+             <label for="star5">★</label>
+            </div>
+            <button type="submit">Envoyer</button>
+            </form>
+
+
+        <form action="/submit-comment" method="POST" class="comment-form">
+            <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email (optionnel)</label>
+                <input type="email" id="email1" name="email" placeholder="votre@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="comment">Commentaire</label>
+                <textarea id="comment" name="comment" rows="5" placeholder="Écrivez votre commentaire ici..." required></textarea>
+            </div>
+            
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+</body>
+</html>
