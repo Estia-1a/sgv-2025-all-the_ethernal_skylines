@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles/style_page_annonce.css" />
+    
+    <title>ESTIA'Loc - Annonce</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/1946/1946436.png" alt="Logo ESTIA'Loc">
+            <h1>ESTIA'Loc</h1>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#description">description</a></li>
+                <li><a href="#localisation">localisation</a></li>
+                <li><a href="#Contact">contacter</a></li>
+                <li><a href="#comentaire">commentaire</a></li>
+            </ul>
+        </nav>
+
+        <nav class="header-icons" aria-label="Navigation utilisateur">
+            <button type="button" aria-label="Favoris">
+                <i class="fa-solid fa-heart" aria-hidden="true"></i>
+            </button>
+            <button type="button" aria-label="Notifications">
+                <i class="fa-solid fa-bell" aria-hidden="true"></i>
+            </button>
+            <button type="button" aria-label="Profil utilisateur">
+                <i class="fa-solid fa-user" aria-hidden="true"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- DESCRIPTION -->
+    <section id="description">
+        <h1>Studio Individuel - Résidence CROUS Erleak</h1>
+
+        <div class="description-container">
+            <!-- CARROUSEL D'IMAGES -->
+            <div class="carousel-container">
+                <div class="carousel">
+                    <button class="carousel-button prev" onclick="changeSlide(-1)">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="carousel-images" id="carouselImages">
+                        <img src="media/pictures/Crous.jpg" alt="Résidence Crous">
+                        <img src="media/pictures/studio6.jpg" alt="Intérieur logement">
+                    </div>
+                    <button class="carousel-button next" onclick="changeSlide(1)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="carousel-indicators">
+                    <span class="indicator active" onclick="goToSlide(0)"></span>
+                    <span class="indicator" onclick="goToSlide(1)"></span>
+                </div>
+            </div>
+
+            <!-- INFORMATIONS DU LOGEMENT -->
+            <div class="property-info">
+                <!-- PRIX -->
+                <div class="price-section">
+                    <div class="price">411,04 €/mois</div>
+                    <div class="price-details">Charges comprises (eau, électricité, chauffage, internet)</div>
+                    <div style="margin-top: 15px; font-size: 14px;">
+                        <i class="fa-solid fa-info-circle"></i> Avance de 100 € déductible du premier mois
+                    </div>
+                </div>
+
+                <!-- INFORMATIONS PRINCIPALES -->
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fa-solid fa-home"></i>
+                        <div class="label">Type</div>
+                        <div class="value">Studio individuel</div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-ruler-combined"></i>
+                        <div class="label">Superficie</div>
+                        <div class="value">18,85 - 22,09 m²</div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-map-marker-alt"></i>
+                        <div class="label">Adresse</div>
+                        <div class="value">89 Rue Berrua, 64210 Bidart</div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-bus"></i>
+                        <div class="label">Transport</div>
+                        <div class="value">Bus à 200m (Ligne 3)</div>
+                    </div>
+                </div>
+        </section>
+
+        <section>
+                <!-- ÉQUIPEMENTS -->
+        <div class="description">
+            <div class="features">    
+                <div class="features-section">
+                    <h3><i class="fa-solid fa-check-circle"></i> Équipements inclus</h3>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fa-solid fa-bed"></i>
+                            <div class="feature-text">
+                                <div class="feature-title">Pièce principale</div>
+                                <div class="feature-desc">Lit simple, bureau, étagères, placards, chaise, tabouret</div>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-utensils"></i>
+                            <div class="feature-text">
+                                <div class="feature-title">Kitchenette équipée</div>
+                                <div class="feature-desc">Frigo, plaques vitrocéramiques, évier, table</div>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-shower"></i>
+                            <div class="feature-text">
+                                <div class="feature-title">Salle d'eau privée</div>
+                                <div class="feature-desc">Douche, WC, lavabo, miroir</div>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-wifi"></i>
+                            <div class="feature-text">
+                                <div class="feature-title">Internet inclus</div>
+                                <div class="feature-desc">Connexion haut débit dans tout le logement</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SERVICES -->
+                <div class="features-section">
+                    <h3><i class="fa-solid fa-star"></i> Services de la résidence</h3>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fa-solid fa-building"></i>
+                            <div class="feature-text">
+                                <div class="feature-title">Résidence récente et calme</div>
+                                <div class="feature-desc">Ouverte en 2017</div>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-school"></i>
+                            <div class="feature-text">
+                                <div class="feature-title">Proximité ESTIA</div>
+                                <div class="feature-desc">À proximité de l'ESTIA et du Crous Market'</div>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-user-tie"></i>
+                            <div class="feature-text">
+                                <div class="feature-title">Personnel disponible</div>
+                                <div class="feature-desc">Accueil, astreinte et veille assurés</div>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-hand-holding-usd"></i>
+                            <div class="feature-text">
+                                <div class="feature-title">APL possible</div>
+                                <div class="feature-desc">Éligible aux aides au logement</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!-- CONDITIONS D'ACCÈS -->
+                <div class="conditions-section">
+                    <h3><i class="fa-solid fa-clipboard-list"></i> Conditions d'accès</h3>
+                    <ul>
+                        <li>Étudiants avec Dossier Social Étudiant (DSE) validé</li>
+                        <li>Étudiants internationaux en mobilité (Master, Doctorat)</li>
+                        <li>Justificatifs à fournir : ressources, passeport, certificat de scolarité</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- LOCALISATION -->
+    <div id="localisation">
+        <h2>Localisation</h2>
+        <div id="map"></div>
+    </div>
+
+    <!-- CONTACT -->
+    <section id="Contact">
+        <h3>Contact</h3>
+        <form>
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+
+            <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Adresse e-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telephone">Numéro de téléphone</label>
+                <input type="tel" id="telephone" name="telephone">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" placeholder="Écrivez votre message ici..." required></textarea>
+            </div>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <!-- COMMENTAIRES -->
+    <section id="comentaire">
+        <h5>Laissez une note et un commentaire</h5>
+        
+        <form action="/soumettre-note" method="post">
+            <div class="stars">
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label for="star5">★</label>
+                
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4">★</label>
+                
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3">★</label>
+                
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2">★</label>
+                
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1">★</label>
+            </div>
+            <button type="submit">Envoyer la note</button>
+        </form>
+
+        <form action="/submit-comment" method="POST" class="comment-form">
+            <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email1">Email (optionnel)</label>
+                <input type="email" id="email1" name="email" placeholder="votre@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="comment">Commentaire</label>
+                <textarea id="comment" name="comment" rows="5" placeholder="Écrivez votre commentaire ici..." required></textarea>
+            </div>
+            
+            <button type="submit">Envoyer le commentaire</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <a href="#top" id="backToTop">Retour à l'accueil</a>
+            <a href="#" id="privacyToggle">Politique de confidentialité</a>
+            <a href="#" id="contactToggle">Contact</a>
+        </div>
+
+        <div id="privacySection" class="expandable-section">
+            <h3>Politique de confidentialité</h3>
+            <p><strong>1. Collecte des données</strong><br>
+            Nous collectons les informations que vous nous fournissez directement lors de votre inscription sur ESTIA'Loc, notamment votre nom, adresse e-mail, numéro de téléphone et informations de localisation.</p>
+            
+            <p><strong>2. Utilisation des données</strong><br>
+            Vos données personnelles sont utilisées pour faciliter la mise en relation entre propriétaires et locataires, améliorer nos services et vous envoyer des notifications pertinentes concernant les annonces.</p>
+            
+            <p><strong>3. Protection des données</strong><br>
+            Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles appropriées pour protéger vos informations contre tout accès non autorisé, modification ou divulgation.</p>
+            
+            <p><strong>4. Vos droits</strong><br>
+            Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles.</p>
+        </div>
+
+        <div id="contactSection" class="expandable-section">
+            <h3>Contactez-nous</h3>
+            <div class="contact-info">
+                <p><strong>📧 E-mail :</strong> contacteznous@estialoc.fr</p>
+                <p><strong>📧 Support :</strong> supportinfo@estialoc.fr</p>
+                <p><strong>📞 Téléphone :</strong> +33 5 59 43 84 00</p>
+                <p><strong>📞 Service client :</strong> +33 5 59 43 84 01</p>
+                <p><strong>📍 Adresse :</strong> Technopole Izarbel, 64210 Bidart, France</p>
+                <p><strong>🕐 Horaires :</strong> Lundi - Vendredi : 9h00 - 18h00</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Carte Leaflet
+        var map = L.map('map').setView([43.438756030637485, -1.5875441414954101], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 19,
+        }).addTo(map);
+
+        var marker = L.marker([43.438756030637485, -1.5875441414954101]).addTo(map);
+        marker.bindPopup('<b>Bidart, France</b><br>Residence CROUS ERLEAK').openPopup();
+
+        var marker2 = L.marker([43.445940644203354, -1.5514170170808224]).addTo(map);
+        marker2.bindPopup('<b>ESTIA, France</b>');
+
+        // CARROUSEL
+        let currentSlide = 0;
+        const totalSlides = 2;
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+            
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const carouselImages = document.getElementById('carouselImages');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            carouselImages.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            indicators.forEach((indicator))
+        }

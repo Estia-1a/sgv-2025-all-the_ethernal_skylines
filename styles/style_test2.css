@@ -1,0 +1,560 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url('https://cdn.generationvoyage.fr/2020/06/Villages-Pays-Basque-Mise-en-avant.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo h1 {
+            font-size: 22px;
+            color: #2c3e50;
+        }
+
+        .header-icons button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            margin-left: 20px;
+            cursor: pointer;
+            color: #2c3e50;
+            padding: 5px;
+            transition: color 0.3s;
+        }
+
+        .header-icons button:nth-child(1):hover {
+            color: #fe4e2f;
+        }
+
+        .header-icons button:nth-child(2):hover {
+            color: #ffc800;
+        }
+
+        .header-icons button:nth-child(3):hover {
+            color: #007bff;
+        }
+
+        /* NAVIGATION */
+        nav.main-nav {
+            margin: 5px auto;
+        }
+
+        nav.main-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        nav.main-nav ul li a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav.main-nav ul li a:hover {
+            background-color: #2c3e50;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* SECTIONS */
+        section, #localisation {
+            background-color: rgba(255, 255, 255, 0.95);
+            margin: 30px auto;
+            padding: 40px;
+            max-width: 1200px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        section h1, section h2, section h3, section h5, #localisation h2 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 32px;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 12px;
+        }
+
+        /* NOUVELLE DESCRIPTION AVEC CARROUSEL */
+        #description {
+            line-height: 1.8;
+            color: #34495e;
+        }
+
+        .description-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        /* CARROUSEL D'IMAGES */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(44, 62, 80, 0.8);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            z-index: 10;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(44, 62, 80, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-button.prev {
+            left: 15px;
+        }
+
+        .carousel-button.next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background-color: #2c3e50;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        /* INFORMATIONS DU LOGEMENT */
+        .description {
+            display: flex;
+        }
+
+        .property-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .price-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .price-section .price {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .price-section .price-details {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .info-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #2c3e50;
+        }
+
+        .info-card i {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .info-card .label {
+            font-size: 13px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .info-card .value {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+                
+        .features {
+            display: flex;
+        }
+
+        .features-section {
+            margin-top: 20px;
+        }
+
+        .features-section h3 {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .feature-item i {
+            color: #27ae60;
+            font-size: 18px;
+            margin-top: 3px;
+        }
+
+        .feature-item .feature-text {
+            flex: 1;
+        }
+
+        .feature-item .feature-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 3px;
+        }
+
+        .feature-item .feature-desc {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .conditions-section {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 24px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .conditions-section h3 {
+            color: #856404;
+            font-size: 24px;
+            margin-bottom: 12px;
+            border: none;
+            padding: 0;
+        }
+
+        .conditions-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .conditions-section li {
+            padding: 24px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #856404;
+        }
+
+        .conditions-section li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* MAP */
+        #map {
+            width: 100%;
+            height: 500px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+
+        /* FORMULAIRES */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #2c3e50;
+            box-shadow: 0 0 8px rgba(44, 62, 80, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button[type="submit"] {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            transition: all 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #1a252f;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        }
+
+        /* SYSTÈME D'ÉTOILES */
+        .stars {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 25px 0;
+            flex-direction: row-reverse;
+        }
+
+        .stars input[type="radio"] {
+            display: none;
+        }
+
+        .stars label {
+            font-size: 45px;
+            color: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .stars label:hover,
+        .stars label:hover ~ label {
+            color: #ffc800;
+            transform: scale(1.1);
+        }
+
+        .stars input[type="radio"]:checked ~ label {
+            color: #ffc800;
+        }
+
+        #comentaire {
+            text-align: center;
+        }
+
+        .comment-form {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #3498db;
+        }
+
+        .expandable-section {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            background-color: #34495e;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .expandable-section.active {
+            max-height: 800px;
+            padding: 20px;
+        }
+
+        .expandable-section h3 {
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .expandable-section p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .contact-info {
+            text-align: left;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+            .description-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .carousel {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section, #localisation, nav.main-nav {
+                margin: 20px 15px;
+                padding: 25px;
+            }
+
+            nav.main-nav ul {
+                gap: 15px;
+            }
+
+            nav.main-nav ul li a {
+                font-size: 16px;
+                padding: 8px 15px;
+            }
+
+            #map {
+                height: 350px;
+            }
+        }

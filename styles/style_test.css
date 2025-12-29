@@ -1,0 +1,349 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url('https://cdn.generationvoyage.fr/2020/06/Villages-Pays-Basque-Mise-en-avant.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo h1 {
+            font-size: 22px;
+            color: #2c3e50;
+        }
+
+        .header-icons button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            margin-left: 20px;
+            cursor: pointer;
+            color: #2c3e50;
+            padding: 5px;
+            transition: color 0.3s;
+        }
+
+        .header-icons button:nth-child(1):hover {
+            color: #fe4e2f;
+        }
+
+        .header-icons button:nth-child(2):hover {
+            color: #ffc800;
+        }
+
+        .header-icons button:nth-child(3):hover {
+            color: #007bff;
+        }
+
+        /* NAVIGATION */
+        nav.main-nav {
+            margin: 5px auto;
+        }
+
+        nav.main-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        nav.main-nav ul li a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav.main-nav ul li a:hover {
+            background-color: #2c3e50;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* SECTIONS */
+        section, #localisation {
+            background-color: rgba(255, 255, 255, 0.95);
+            margin: 30px auto;
+            padding: 40px;
+            max-width: 1200px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        section h1, section h2, section h3, section h5, #localisation h2 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 32px;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 12px;
+            text-transform: capitalize;
+        }
+
+        /* DESCRIPTION SECTION SIMPLIFIÉE */
+        #description {
+            line-height: 1.8;
+            color: #34495e;
+        }
+
+        #description .content {
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        #description .images {
+            display: flex;
+            gap: 50px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #description .images img {
+            max-width: 500px;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        #description .images img:hover {
+            transform: scale(1.03);
+        }
+
+        #description .info-item {
+            margin-bottom: 20px;
+        }
+
+        #description .info-item strong {
+            color: #2c3e50;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #description .info-item p {
+            margin: 5px 0 5px 20px;
+            font-size: 15px;
+        }
+
+        /* MAP */
+        #map {
+            width: 100%;
+            height: 500px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+
+        /* FORMULAIRES */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #2c3e50;
+            box-shadow: 0 0 8px rgba(44, 62, 80, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button[type="submit"] {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            transition: all 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #1a252f;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        }
+
+        /* SYSTÈME D'ÉTOILES */
+        .stars {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 25px 0;
+            flex-direction: row-reverse;
+        }
+
+        .stars input[type="radio"] {
+            display: none;
+        }
+
+        .stars label {
+            font-size: 45px;
+            color: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .stars label:hover,
+        .stars label:hover ~ label {
+            color: #ffc800;
+            transform: scale(1.1);
+        }
+
+        .stars input[type="radio"]:checked ~ label {
+            color: #ffc800;
+        }
+
+        #comentaire {
+            text-align: center;
+        }
+
+        .comment-form {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #3498db;
+        }
+
+        .expandable-section {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            background-color: #34495e;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .expandable-section.active {
+            max-height: 800px;
+            padding: 20px;
+        }
+
+        .expandable-section h3 {
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .expandable-section p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .contact-info {
+            text-align: left;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            section, #localisation, nav.main-nav {
+                margin: 20px 15px;
+                padding: 25px;
+            }
+
+            nav.main-nav ul {
+                gap: 15px;
+            }
+
+            nav.main-nav ul li a {
+                font-size: 16px;
+                padding: 8px 15px;
+            }
+
+            #description .images {
+                flex-direction: column;
+            }
+
+            #map {
+                height: 350px;
+            }
+        }
